@@ -1,0 +1,14 @@
+{:lint-as {taoensso.tufte/defnp clojure.core/defn
+           taoensso.tufte/defnp- clojure.core/defn-
+           taoensso.tufte/fnp clojure.core/fn}
+ :linters {:unused-binding {:exclude-destructured-keys-in-fn-args true
+                            :exclude-destructured-as true}
+           :unresolved-var
+           {:exclude [taoensso.telemere/with-ctx+ taoensso.telemere/with-signals
+                      taoensso.telemere/with-min-level taoensso.telemere/signal!
+                      taoensso.telemere/add-handler! taoensso.telemere/handler:console
+                      taoensso.telemere/remove-handler! taoensso.telemere/with-signal
+                      taoensso.telemere/set-middleware!]}
+           :clojure-lsp/unused-public-var {:level :off}}
+ :output {:exclude-files ["target"]}
+ :config-in-comment {:linters {:unresolved-namespace {:level :off}}}}
